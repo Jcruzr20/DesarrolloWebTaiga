@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B-02 Personalización de pedidos</title>
+  <title>Pollos Asados</title>
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Iconos Bootstrap -->
@@ -23,8 +23,8 @@
   <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" width="35" height="35" class="me-2">
-        <h2>PolloAsado</h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/1206/1206237.png" width="50" height="45" class="me-2">
+        <h2 class="mb-0">PolloAsado</h2>
       </a>
       <div class="d-flex">
         <a href="#" class="nav-link text-white me-3">
@@ -36,6 +36,52 @@
       </div>
     </div>
   </nav>
+    <!-- Carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/Pollo.jpg" alt="Los Angeles" class="d-block w-50 mx-auto">
+        <div class="carousel-caption">
+          <h3><i>1</i></h3>
+          <p><i>Platos Especiales</i></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/PolloGrillado.png" alt="Chicago"  class="d-block w-50 mx-auto">
+        <div class="carousel-caption">
+          <h3><i>2</i></h3>
+          <p><i>Platos Especiales</i></p>
+        </div> 
+      </div>
+      <div class="carousel-item">
+        <img src="img/PolloPapas.png" alt="New York"  class="d-block w-50 mx-auto">
+        <div class="carousel-caption">
+          <h3><i>3</i></h3>
+          <p><i>Platos Especiales</i></p>
+        </div>  
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <br>
+  <br>
+
 
   <!-- CONTENIDO PRINCIPAL -->
   <div class="container mt-4">
@@ -120,76 +166,7 @@
           <div class="row g-0">
             <!-- Imagen -->
             <div class="col-md-6 d-flex align-items-center">
-              <img src="https://s-api.qcart.app/images/comoquiero-uploads/images/recipes/originals/3437.jpg?s=716x600&fit=cover&ext=webp" 
-                class="img-fluid rounded-start producto-img" alt="Producto">
-            </div>
-            <!-- Personalización -->
-            <div class="col-md-6">
-              <div class="card-body">
-                <h5 class="card-title text-center">Personalizar el pedido</h5>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span>Papas Fritas</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span>Ensalada</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span>Salsa BBQ</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <span>Bebida 2L</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <button class="btn btn-success w-100">Confirmar Pedido</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-       <!-- Producto 2 -->
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="row g-0">
-            <!-- Imagen -->
-            <div class="col-md-6 d-flex align-items-center">
-              <img src="https://easyways.cl/storage/20200731162901pollo-asado.jpg" class="img-fluid rounded-start producto-img" alt="Producto">
-            </div>
-            <!-- Personalización -->
-            <div class="col-md-6">
-              <div class="card-body">
-                <h5 class="card-title text-center">Personalizar el pedido</h5>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span>Papas Fritas</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span>Ensalada</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span>Salsa BBQ</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <span>Bebida 2L</span>
-                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
-                </div>
-                <button class="btn btn-success w-100">Confirmar Pedido</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Producto 3 -->
-      <div class="col-md-6">
-        <div class="card shadow-sm">
-          <div class="row g-0">
-            <!-- Imagen -->
-            <div class="col-md-6 d-flex align-items-center">
-              <img src="https://s-api.qcart.app/images/comoquiero-uploads/images/recipes/originals/3437.jpg?s=716x600&fit=cover&ext=webp" 
+              <img src="https://polloslariviera.com/wp-content/uploads/2022/10/Bandeja-de-pollo-con-pechuga-1-1.jpg" 
                 class="img-fluid rounded-start producto-img" alt="Producto">
             </div>
             <!-- Personalización -->
@@ -224,7 +201,76 @@
           <div class="row g-0">
             <!-- Imagen -->
             <div class="col-md-6 d-flex align-items-center">
-              <img src="https://easyways.cl/storage/20200731162901pollo-asado.jpg" class="img-fluid rounded-start producto-img" alt="Producto">
+              <img src="https://images.mrcook.app/recipe-image/01923991-ed93-76cf-b234-4ae9c3f9c1c6" class="img-fluid rounded-start producto-img" alt="Producto">
+            </div>
+            <!-- Personalización -->
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title text-center">Personalizar el pedido</h5>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span>Papas Fritas</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span>Ensalada</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span>Salsa BBQ</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span>Bebida 2L</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <button class="btn btn-success w-100">Confirmar Pedido</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Producto 5 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="row g-0">
+            <!-- Imagen -->
+            <div class="col-md-6 d-flex align-items-center">
+              <img src="https://content-cocina.lecturas.com/medio/2018/07/19/muslitos-y-verduras-al-horno_6d0f298f_800x800.jpg" 
+                class="img-fluid rounded-start producto-img" alt="Producto">
+            </div>
+            <!-- Personalización -->
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title text-center">Personalizar el pedido</h5>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span>Papas Fritas</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span>Ensalada</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span>Salsa BBQ</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span>Bebida 2L</span>
+                  <input type="number" class="form-control form-control-sm w-25" min="0" value="0">
+                </div>
+                <button class="btn btn-success w-100">Confirmar Pedido</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!-- Producto 6 -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="row g-0">
+            <!-- Imagen -->
+            <div class="col-md-6 d-flex align-items-center">
+              <img src="https://www.justspices.es/media/recipe/Verduras-horno-con-pollo-vegano.webp" class="img-fluid rounded-start producto-img" alt="Producto">
             </div>
             <!-- Personalización -->
             <div class="col-md-6">

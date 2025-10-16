@@ -10,19 +10,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <style>
-    body {
-      background-color: #f8f9fa;
-    }
-
-    .card {
-      transition: all 0.3s ease;
-    }
-
-    .link-toggle {
-      cursor: pointer;
-      color: #0d6efd;
-      text-decoration: underline;
-    }
+    body { background-color: #f8f9fa; }
+    .card { transition: all 0.3s ease; }
+    .link-toggle { cursor: pointer; color: #0d6efd; text-decoration: underline; }
+    .error-text { color:#dc3545; font-size:0.9rem; margin-top:4px; }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -46,22 +37,23 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
 
-        <!-- Tarjeta -->
+        <!-- Tarjeta principal -->
         <div class="card shadow-sm">
           <div class="card-header text-center bg-primary text-white">
             <h4 id="form-title">Iniciar Sesión</h4>
           </div>
+
           <div class="card-body">
 
             <!-- Formulario LOGIN -->
             <form id="login-form">
               <div class="mb-3">
                 <label for="emailLogin" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="emailLogin" placeholder="Ej: usuario@gmail.com" required>
+                <input type="email" class="form-control" id="emailLogin" placeholder="Ej: usuario@gmail.com">
               </div>
               <div class="mb-3">
                 <label for="passwordLogin" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="passwordLogin" placeholder="Tu contraseña" required>
+                <input type="password" class="form-control" id="passwordLogin" placeholder="Tu contraseña">
               </div>
 
               <!-- Rol -->
@@ -75,11 +67,10 @@
                   <input class="form-check-input" type="radio" name="rol" id="cocinero" value="cocinero">
                   <label class="form-check-label" for="cocinero">Cocinero</label>
                 </div>
-              </div>
-
-              <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="remember">
-                <label class="form-check-label" for="remember">Recordarme</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="rol" id="repartidor" value="repartidor">
+                  <label class="form-check-label" for="repartidor">Trabajador</label>
+                </div>
               </div>
 
               <button type="submit" class="btn btn-primary w-100">Ingresar</button>
@@ -88,21 +79,44 @@
               </div>
             </form>
 
-            <!-- Formulario REGISTRO -->
+            <!-- FORMULARIO REGISTRO (Skeleton visual) -->
             <form id="register-form" style="display:none;">
+              <h5 class="text-center mb-4">Crear Cuenta</h5>
+
               <div class="mb-3">
-                <label for="emailRegister" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="emailRegister" placeholder="Ej: usuario@gmail.com" required>
+                <label for="nombreRegister" class="form-label">Nombre completo <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="nombreRegister" placeholder="Ej: María Pérez">
+                <div class="error-text">⚠️ Complete este campo</div>
               </div>
+
               <div class="mb-3">
-                <label for="passwordRegister" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="passwordRegister" placeholder="Crea una contraseña" required>
+                <label for="emailRegister" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="emailRegister" placeholder="Ej: usuario@gmail.com">
+                <div class="error-text">⚠️ Ingrese un correo válido</div>
               </div>
+
               <div class="mb-3">
-                <label for="passwordConfirm" class="form-label">Confirmar contraseña</label>
-                <input type="password" class="form-control" id="passwordConfirm" placeholder="Repite tu contraseña" required>
+                <label for="passwordRegister" class="form-label">Contraseña <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="passwordRegister" placeholder="Crea una contraseña">
+                <div class="error-text">⚠️ La contraseña es obligatoria</div>
               </div>
-              <button type="submit" class="btn btn-success w-100">Crear Cuenta</button>
+
+              <div class="mb-3">
+                <label for="passwordConfirm" class="form-label">Confirmar contraseña <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="passwordConfirm" placeholder="Repite tu contraseña">
+                <div class="error-text">⚠️ Las contraseñas no coinciden</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="direccionRegister" class="form-label">Dirección <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="direccionRegister" placeholder="Ej: Av. Libertador 123, Santiago">
+                <div class="error-text">⚠️ Complete este campo</div>
+              </div>
+
+              <button type="button" class="btn btn-success w-100 mt-3">
+                <i class="bi bi-person-plus-fill me-2"></i> Crear Cuenta
+              </button>
+
               <div class="text-center mt-3">
                 <small>¿Ya tienes cuenta? <span class="link-toggle" id="show-login">Volver a iniciar sesión</span></small>
               </div>
@@ -110,7 +124,6 @@
 
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -147,7 +160,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- SCRIPT: alternar entre login y registro -->
   <script>
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
@@ -155,7 +168,6 @@
     const showLogin = document.getElementById('show-login');
     const title = document.getElementById('form-title');
 
-    // Alternar entre login y registro
     showRegister.addEventListener('click', () => {
       loginForm.style.display = 'none';
       registerForm.style.display = 'block';
@@ -166,23 +178,6 @@
       registerForm.style.display = 'none';
       loginForm.style.display = 'block';
       title.textContent = 'Iniciar Sesión';
-    });
-
-    // Redirección hipotética según rol
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const rol = document.querySelector('input[name="rol"]:checked').value;
-      if (rol === 'cocinero') {
-        window.location.href = 'panelControl.html';
-      } else {
-        window.location.href = 'index.html';
-      }
-    });
-
-    // Al crear cuenta, ir a validación hipotética
-    registerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      window.location.href = 'validacionCorreo.html';
     });
   </script>
 
